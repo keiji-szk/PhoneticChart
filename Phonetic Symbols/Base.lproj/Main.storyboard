@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="69F-b9-HU6">
-                                <rect key="frame" x="0.0" y="88" width="414" height="694"/>
+                                <rect key="frame" x="0.0" y="136" width="414" height="686"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="a63-Rc-gGW">
                                     <size key="itemSize" width="128" height="128"/>
@@ -38,27 +38,51 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xiD-hV-VcN" customClass="RecordingView" customModule="Phonetic_Symbols" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="782" width="414" height="80"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="nIB-uK-HwT"/>
+                                    <constraint firstAttribute="height" constant="40" id="nIB-uK-HwT"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7f-uK-DBk">
+                                <rect key="frame" x="229" y="100" width="189" height="24"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="jyf-i3-QfQ">
+                                        <rect key="frame" x="0.0" y="0.5" width="24" height="22.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="82P-97-bPK"/>
+                                            <constraint firstAttribute="height" constant="24" id="OrA-Pl-4zU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkp-Q1-0qW">
+                                        <rect key="frame" x="24" y="0.0" width="165" height="24"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Search English Words"/>
+                                        <connections>
+                                            <segue destination="3oU-p4-Tfd" kind="show" id="s56-f1-ZiA"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="69F-b9-HU6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7WK-HT-taM"/>
+                            <constraint firstItem="69F-b9-HU6" firstAttribute="top" secondItem="k7f-uK-DBk" secondAttribute="bottom" constant="12" id="7ui-q7-IvH"/>
                             <constraint firstItem="xiD-hV-VcN" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="8Ji-Ss-geQ"/>
-                            <constraint firstItem="69F-b9-HU6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="8OF-Bi-LYn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xiD-hV-VcN" secondAttribute="trailing" id="PuC-vn-d5K"/>
                             <constraint firstItem="xiD-hV-VcN" firstAttribute="top" secondItem="69F-b9-HU6" secondAttribute="bottom" id="R5q-9j-qZk"/>
                             <constraint firstItem="xiD-hV-VcN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="aK2-8h-f87"/>
+                            <constraint firstItem="k7f-uK-DBk" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="4" id="cWN-fu-mwW"/>
+                            <constraint firstItem="k7f-uK-DBk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="tyJ-93-iHx"/>
                             <constraint firstItem="69F-b9-HU6" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="wyV-qs-VIy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Phonetic Symbols Chart" id="UN3-GT-TxJ"/>
                     <connections>
+                        <outlet property="recordingView" destination="xiD-hV-VcN" id="CJH-Up-rkR"/>
+                        <outlet property="recordingViewHeightConstraint" destination="nIB-uK-HwT" id="Foy-hR-AUL"/>
                         <outlet property="symbolCollectionView" destination="69F-b9-HU6" id="Jur-Y1-dos"/>
                         <segue destination="NU5-br-pSU" kind="show" identifier="SeeDetail" id="DBY-kp-JVd"/>
                     </connections>
@@ -66,6 +90,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="51.5625"/>
+        </scene>
+        <!--Search English Words-->
+        <scene sceneID="mAo-fA-hAE">
+            <objects>
+                <viewController id="3oU-p4-Tfd" customClass="EnglishSearchViewController" customModule="Phonetic_Symbols" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SP7-0m-Ho9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Type an English word" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OKn-Ld-Zya">
+                                <rect key="frame" x="24" y="112" width="366" height="51"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <scopeButtonTitles>
+                                    <string>Title</string>
+                                    <string>Title</string>
+                                </scopeButtonTitles>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English Word" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqH-Ln-MYw">
+                                <rect key="frame" x="24" y="193" width="105.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Jbg-3y-naC">
+                                <rect key="frame" x="24" y="238.5" width="366" height="32"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KWC-N4-tuV">
+                                        <rect key="frame" x="0.0" y="1.5" width="32" height="28.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="Kr5-NK-I8C"/>
+                                            <constraint firstAttribute="height" constant="32" id="jup-wi-8fc"/>
+                                        </constraints>
+                                    </imageView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Wwp-Of-rNU">
+                                        <rect key="frame" x="40" y="14" width="326" height="4"/>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnU-F5-tzu">
+                                <rect key="frame" x="24" y="294.5" width="366" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PDK-MZ-rje"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OKn-Ld-Zya" firstAttribute="leading" secondItem="PDK-MZ-rje" secondAttribute="leading" constant="24" id="CKK-TN-UlC"/>
+                            <constraint firstItem="PDK-MZ-rje" firstAttribute="trailing" secondItem="KnU-F5-tzu" secondAttribute="trailing" constant="24" id="G5f-lX-adh"/>
+                            <constraint firstItem="PDK-MZ-rje" firstAttribute="trailing" secondItem="OKn-Ld-Zya" secondAttribute="trailing" constant="24" id="KCE-Py-9FQ"/>
+                            <constraint firstItem="dqH-Ln-MYw" firstAttribute="top" secondItem="OKn-Ld-Zya" secondAttribute="bottom" constant="30" id="ZPh-Vf-wlL"/>
+                            <constraint firstItem="Jbg-3y-naC" firstAttribute="leading" secondItem="PDK-MZ-rje" secondAttribute="leading" constant="24" id="fgp-Ew-dck"/>
+                            <constraint firstItem="dqH-Ln-MYw" firstAttribute="leading" secondItem="PDK-MZ-rje" secondAttribute="leading" constant="24" id="ljI-j2-ahu"/>
+                            <constraint firstItem="PDK-MZ-rje" firstAttribute="trailing" secondItem="Jbg-3y-naC" secondAttribute="trailing" constant="24" id="n5n-ME-PE7"/>
+                            <constraint firstItem="KnU-F5-tzu" firstAttribute="leading" secondItem="PDK-MZ-rje" secondAttribute="leading" constant="24" id="nGG-vP-kYY"/>
+                            <constraint firstItem="Jbg-3y-naC" firstAttribute="top" secondItem="dqH-Ln-MYw" secondAttribute="bottom" constant="24" id="qef-Zt-7jS"/>
+                            <constraint firstItem="KnU-F5-tzu" firstAttribute="top" secondItem="Jbg-3y-naC" secondAttribute="bottom" constant="24" id="rmj-wW-4dd"/>
+                            <constraint firstItem="OKn-Ld-Zya" firstAttribute="top" secondItem="PDK-MZ-rje" secondAttribute="top" constant="24" id="vaj-Rq-fhT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Search English Words" id="fi6-94-l2q"/>
+                    <connections>
+                        <outlet property="searchBar" destination="OKn-Ld-Zya" id="3Ax-qG-37F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8te-hZ-PQW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="818.30357142857144"/>
         </scene>
         <!--Phonetic Detail View Controller-->
         <scene sceneID="WNC-1M-vtp">
@@ -103,11 +196,16 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

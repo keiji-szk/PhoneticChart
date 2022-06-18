@@ -9,15 +9,14 @@ import UIKit
 
 class ViewController: UIViewController, RecordDelegate {
   
+  @IBOutlet var recordViewHeightConstrain: NSLayoutConstraint!
+  @IBOutlet var xibView: XibView!
+  
   func notifyHeightChanged(height: CGFloat) {
     recordViewHeightConstrain.constant = height
-    //XibView.heightChangeAnimate(uiview: xibView, heightConstrain: recordViewHeightConstrain, height: height)
+    XibView.heightChangeAnimate(uiview: xibView, heightConstrain: recordViewHeightConstrain, height: height)
   }
   
-  @IBOutlet var recordViewHeightConstrain: NSLayoutConstraint!
-  
-  
-  @IBOutlet var xibView: XibView!
   
   override func viewDidLoad() {
     super.viewDidLoad()

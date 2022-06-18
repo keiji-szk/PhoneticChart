@@ -8,46 +8,86 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecordingView" customModule="Phonetic_Symbols" customModuleProvider="target">
+            <connections>
+                <outlet property="recordingButton" destination="RWB-lg-U1g" id="Id8-Xn-TEM"/>
+                <outlet property="recordingStackView" destination="rPD-Ea-TpC" id="7Rm-5b-sVL"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="132" y="130"/>
-        </view>
-        <view contentMode="scaleToFill" id="VRb-ro-bHM" customClass="RecordingView" customModule="Phonetic_Symbols" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="udj-Lv-kRx">
-                    <rect key="frame" x="95" y="75" width="67" height="31"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RWB-lg-U1g">
+                    <rect key="frame" x="140" y="426" width="134" height="44"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Recording">
+                        <fontDescription key="titleFontDescription" style="UICTFontTextStyleTitle1"/>
+                    </buttonConfiguration>
+                    <connections>
+                        <action selector="tappedRecording:" destination="-1" eventType="touchUpInside" id="aLq-Ja-N6V"/>
+                    </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HELOOOOOO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ykh-lF-Q4S">
-                    <rect key="frame" x="75" y="46" width="107" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="rPD-Ea-TpC">
+                    <rect key="frame" x="0.0" y="671" width="414" height="191"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeE-QK-QKc">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="31"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Close"/>
+                            <connections>
+                                <action selector="tappedClose:" destination="-1" eventType="touchUpInside" id="Z9k-fe-mhq"/>
+                            </connections>
+                        </button>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mic.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9f7-Wv-ie6">
+                            <rect key="frame" x="157" y="40.5" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="100" id="IF2-0k-iTk"/>
+                                <constraint firstAttribute="height" constant="100" id="SO6-az-rd0"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="21" translatesAutoresizingMaskIntoConstraints="NO" id="anH-t2-Lvs">
+                            <rect key="frame" x="10" y="151" width="394" height="40"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VK4-jK-BOV">
+                                    <rect key="frame" x="0.0" y="1.5" width="40" height="36.5"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="40" id="CM2-uz-cnA"/>
+                                        <constraint firstAttribute="height" constant="40" id="dqj-5I-2qT"/>
+                                    </constraints>
+                                </imageView>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="VVV-Ve-T40">
+                                    <rect key="frame" x="61" y="18" width="333" height="4"/>
+                                </progressView>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="DeE-QK-QKc" secondAttribute="trailing" id="CzG-Zz-w6b"/>
+                        <constraint firstAttribute="trailing" secondItem="anH-t2-Lvs" secondAttribute="trailing" constant="10" id="DpK-Bc-1ZX"/>
+                        <constraint firstItem="DeE-QK-QKc" firstAttribute="leading" secondItem="rPD-Ea-TpC" secondAttribute="leading" id="RgS-na-4QN"/>
+                        <constraint firstItem="anH-t2-Lvs" firstAttribute="leading" secondItem="rPD-Ea-TpC" secondAttribute="leading" constant="10" id="uLD-6x-Ovp"/>
+                    </constraints>
+                </stackView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="ywQ-rd-2rz"/>
-            <point key="canvasLocation" x="-202" y="142"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemGray2Color"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rPD-Ea-TpC" secondAttribute="trailing" id="FUh-PY-b6j"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="rPD-Ea-TpC" secondAttribute="bottom" id="Hjn-6e-kMf"/>
+                <constraint firstItem="RWB-lg-U1g" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RN3-lO-waa"/>
+                <constraint firstItem="RWB-lg-U1g" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Td3-3n-L0q"/>
+                <constraint firstItem="rPD-Ea-TpC" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="f5y-uu-jSA"/>
+            </constraints>
+            <point key="canvasLocation" x="131.8840579710145" y="54.910714285714285"/>
         </view>
-        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="jYE-w8-nzy">
-            <rect key="frame" x="0.0" y="0.0" width="110" height="200"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <viewLayoutGuide key="safeArea" id="R0j-kN-kEF"/>
-            <point key="canvasLocation" x="-255" y="67"/>
-        </stackView>
     </objects>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <image name="mic.fill" catalog="system" width="108" height="128"/>
+        <image name="play.fill" catalog="system" width="116" height="128"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

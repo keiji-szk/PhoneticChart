@@ -31,10 +31,11 @@ class XibView: UIView {
   }
   
   static func heightChangeAnimate(uiview : UIView, heightConstrain : NSLayoutConstraint, height : CGFloat){
-    UIView.animate(withDuration: 1) {
+    UIView.animate(withDuration: 1, delay: 0, options: .curveLinear, animations: {
       heightConstrain.constant = height
-      uiview.layoutIfNeeded()
-    }
+      //uiview.layoutIfNeeded()
+    }, completion: nil)
+    
   }
   
   

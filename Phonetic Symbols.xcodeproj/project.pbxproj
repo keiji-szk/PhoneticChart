@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E51123E3285CF29E00E62E32 /* RecordingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E51123E2285CF29E00E62E32 /* RecordingView.xib */; };
+		E51123E5285CF2B300E62E32 /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51123E4285CF2B300E62E32 /* RecordingView.swift */; };
+		E51123E7285D291400E62E32 /* EnglishSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51123E6285D291400E62E32 /* EnglishSearchViewController.swift */; };
 		E571BB27285011120088787A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571BB26285011120088787A /* AppDelegate.swift */; };
 		E571BB29285011120088787A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571BB28285011120088787A /* SceneDelegate.swift */; };
 		E571BB2B285011120088787A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571BB2A285011120088787A /* ViewController.swift */; };
@@ -22,11 +25,12 @@
 		E571BB4A2853F13E0088787A /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571BB492853F13E0088787A /* AudioManager.swift */; };
 		E571BB4C2853FFD30088787A /* apple.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E571BB4B2853FFD30088787A /* apple.mp3 */; };
 		E571BB4F285449B70088787A /* PhoneticDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571BB4E285449B70088787A /* PhoneticDetailViewController.swift */; };
-		E571BB53285585EF0088787A /* RecordingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = E571BB52285585EF0088787A /* RecordingView.xib */; };
-		E571BB55285586A00088787A /* RecordingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E571BB54285586A00088787A /* RecordingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E51123E2285CF29E00E62E32 /* RecordingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordingView.xib; sourceTree = "<group>"; };
+		E51123E4285CF2B300E62E32 /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
+		E51123E6285D291400E62E32 /* EnglishSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishSearchViewController.swift; sourceTree = "<group>"; };
 		E571BB23285011120088787A /* Phonetic Symbols.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Phonetic Symbols.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E571BB26285011120088787A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E571BB28285011120088787A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,8 +48,6 @@
 		E571BB492853F13E0088787A /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
 		E571BB4B2853FFD30088787A /* apple.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = apple.mp3; sourceTree = "<group>"; };
 		E571BB4E285449B70088787A /* PhoneticDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneticDetailViewController.swift; sourceTree = "<group>"; };
-		E571BB52285585EF0088787A /* RecordingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordingView.xib; sourceTree = "<group>"; };
-		E571BB54285586A00088787A /* RecordingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,8 +111,8 @@
 			children = (
 				E571BB3E2852DFC40088787A /* SectionHeaderViews.swift */,
 				E571BB432852E9410088787A /* LineView.swift */,
-				E571BB52285585EF0088787A /* RecordingView.xib */,
-				E571BB54285586A00088787A /* RecordingView.swift */,
+				E51123E2285CF29E00E62E32 /* RecordingView.xib */,
+				E51123E4285CF2B300E62E32 /* RecordingView.swift */,
 			);
 			path = "Supplementry Views";
 			sourceTree = "<group>";
@@ -128,6 +130,7 @@
 			children = (
 				E571BB2A285011120088787A /* ViewController.swift */,
 				E571BB4E285449B70088787A /* PhoneticDetailViewController.swift */,
+				E51123E6285D291400E62E32 /* EnglishSearchViewController.swift */,
 			);
 			path = "view Controller";
 			sourceTree = "<group>";
@@ -192,7 +195,7 @@
 			files = (
 				E571BB33285011150088787A /* LaunchScreen.storyboard in Resources */,
 				E571BB4C2853FFD30088787A /* apple.mp3 in Resources */,
-				E571BB53285585EF0088787A /* RecordingView.xib in Resources */,
+				E51123E3285CF29E00E62E32 /* RecordingView.xib in Resources */,
 				E571BB30285011150088787A /* Assets.xcassets in Resources */,
 				E571BB2E285011120088787A /* Main.storyboard in Resources */,
 			);
@@ -207,9 +210,10 @@
 			files = (
 				E571BB422852E0380088787A /* TileCollectionViewCell.swift in Sources */,
 				E571BB462853120A0088787A /* PronunciationKind.swift in Sources */,
-				E571BB55285586A00088787A /* RecordingView.swift in Sources */,
+				E51123E5285CF2B300E62E32 /* RecordingView.swift in Sources */,
 				E571BB4F285449B70088787A /* PhoneticDetailViewController.swift in Sources */,
 				E571BB3C2852DE3E0088787A /* SymbolItem.swift in Sources */,
+				E51123E7285D291400E62E32 /* EnglishSearchViewController.swift in Sources */,
 				E571BB3F2852DFC40088787A /* SectionHeaderViews.swift in Sources */,
 				E571BB2B285011120088787A /* ViewController.swift in Sources */,
 				E571BB48285318A20088787A /* Symbol.swift in Sources */,

@@ -7,7 +7,15 @@
 
 import UIKit
 
-class ViewController: UIViewController, SeeDetailButtonTappedDelegate {
+class ViewController: UIViewController, SeeDetailButtonTappedDelegate, RecordingDelegate {
+  
+  @IBOutlet var recordingView: RecordingView!
+  @IBOutlet var recordingViewHeightConstraint: NSLayoutConstraint!
+  
+  func notifyHeightChanged(height: CGFloat) {
+    recordingViewHeightConstraint.constant = height
+  }
+  
   func notifyTapped(kind: PronunciationKind) {
     if(kind == .consonants){
       performSegue(withIdentifier: "SeeDetail", sender: nil)
@@ -15,7 +23,6 @@ class ViewController: UIViewController, SeeDetailButtonTappedDelegate {
       performSegue(withIdentifier: "SeeDetail", sender: nil)
     }
   }
-  
   
   enum Section: Hashable{
     case shortVowels
@@ -38,6 +45,10 @@ class ViewController: UIViewController, SeeDetailButtonTappedDelegate {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    // Set delegate
+    recordingView.ownerView = self
+    
+    // Symbol Collection View Layout
     symbolCollectionView.collectionViewLayout = createLayout()
     symbolCollectionView.register(TileCollectionViewCell.self, forCellWithReuseIdentifier: TileCollectionViewCell.reuseIdentifier)
     symbolCollectionView.register(LineView.self, forSupplementaryViewOfKind: SupplementaryViewKind.topLine, withReuseIdentifier: LineView.reuseIdentifier)
